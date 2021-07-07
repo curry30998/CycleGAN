@@ -11,10 +11,12 @@ if [[ $FILE == "cityscapes" ]]; then
     exit 1
 fi
 
-URL=https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/$FILE.zip
+URL=https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/download_dataset.sh ae_photos
+
 ZIP_FILE=./datasets/$FILE.zip
 TARGET_DIR=./datasets/$FILE/
 wget -N $URL -O $ZIP_FILE
 mkdir $TARGET_DIR
 unzip $ZIP_FILE -d ./datasets/
 rm $ZIP_FILE
+
